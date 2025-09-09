@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - All Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"> 
+    <div class="container head-inner"> 
+        <a class="brand" href="index.html"> VAL STORE</a>
+        <nav class="nav"> 
+            <a href="index.html#shop">Categories</a>
+            <a href="index.html#featured">featured</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </div>
+  </header> 
+  <main class="container shop"> 
+    <!--toolbar-->
+    <div class="shop-toolbar"> 
+        <h1>All Products</h1>
+        <div class="controls"> 
+            <input  id="search" class="input" placeholder="Search products..." aria-label="Search">
+            <select class="input" aria-label="Sort"> 
+                <option value="featured">Sort: Featured</option>
+                <option value="price-asc">Price: Low  High</option>
+                <option value="price-desc"> Price: High Low</option>
+                <option value="name-asc">Name:A z</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="shop-layout"> 
+        <!--filters sidebar-->
+        <aside class="filters"> 
+            <h3>Filter</h3>
+            <div class="filter-group"> 
+                <b>Category</b>
+                <label><input type="checkbox" name="cat" value="phones">Phones</label>
+                <label><input type="checkbox" name="cat" value="accessories"> Accessories</label>
+                <label><input type="checkbox" name="cat" value="audio">Audio</label>
+                <label><input type="checkbox" name="cat" value="deals">Deals</label>
+            </div>
+
+            <div class="filter-group"> 
+                <b>Price</b>
+                <label><input type="radio" name="price" value="all" checked>All</label>
+                <label><input type="radio" name="price" value="0-5000"> $0-5000</label>
+                <label><input type="radio" name="price" value="5000-15000"> $5000-15000</label>
+                <label><input type="radio" name="price" value="15000-50000">$15000-50000</label>
+            </div> 
+            <button class="btn btn-apply" type="button">Apply Filters </button>
+        </aside>
+<!--products grid-->
+<section class="plp"> 
+    <div class="products-grid" id="grid"> 
+        <!--repeat product card for more items-->
+        <article class="card" data-cat="phones" data-price="35000"> 
+            <a class="img-wrap" href="product-iphone-17pro max.html"> 
+                <img src="iphone-17pro max.jpeg" alt="iphone-17pro max" loading="lazy">
+            </a> 
+            <h3>iphone-17promax</h3>
+            <p class="price"> $35000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+
+        <article class="card" data-cat="phones" data-price="30000"> 
+            <a class="img-wrap" href="product-iphone-17pro .html"> 
+                <img src="iphone-17pro.jpeg" alt="iphone-17pro" loading="lazy">
+            </a> 
+            <h3>iphone-17pro</h3>
+            <p class="price"> $30000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+        
+        <article class="card" data-cat="phones" data-price="25000"> 
+            <a class="img-wrap" href="product-iphone-17.html"> 
+                <img src="iphone-17.jpeg" alt="iphone-17" loading="lazy">
+            </a> 
+            <h3>iphone-17</h3>
+            <p class="price"> $25000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+         
+
+         <article class="card" data-cat="phones" data-price="23000"> 
+            <a class="img-wrap" href="product-iphone-16promax.html"> 
+                <img src="iphone-16promax.jpeg" alt="iphone-16promax" loading="lazy">
+            </a> 
+            <h3>iphone-16promax</h3>
+            <p class="price"> $23000</p>
+            <button class="btn">Add to Cart </button>
+        </article> 
+
+      <article class="card" data-cat="phones" data-price="20000"> 
+            <a class="img-wrap" href="product-iphone-16.html"> 
+                <img src="iphone-16.jpeg" alt="iphone-16" loading="lazy">
+            </a> 
+            <h3>iphone-16</h3>
+            <p class="price"> $20000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+       
+        <article class="card" data-cat="phones" data-price="18000"> 
+            <a class="img-wrap" href="product-iphone-15pro max.html"> 
+                <img src="iphone-15pro max.jpeg" alt="iphone-15pro max" loading="lazy">
+            </a> 
+            <h3>iphone-15pro max</h3>
+            <p class="price"> $18000</p>
+            <button class="btn">Add to Cart </button>
+        </article> 
+
+        <article class="card" data-cat="phones" data-price="16000"> 
+            <a class="img-wrap" href="product-iphone-15pro.html"> 
+                <img src="iphone-15pro.jpeg" alt="iphone-15pro" loading="lazy">
+            </a> 
+            <h3>iphone-15pro</h3>
+            <p class="price"> $16000</p>
+            <button class="btn">Add to Cart </button>
+        </article> 
+
+
+        <article class="card" data-cat="phones" data-price="15000"> 
+            <a class="img-wrap" href="product-iphone-15.html"> 
+                <img src="iphone-15.jpeg" alt="iphone-15" loading="lazy">
+            </a> 
+            <h3>iphone-15</h3>
+            <p class="price"> $15000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+
+
+ <article class="card" data-cat="phones" data-price="14000"> 
+            <a class="img-wrap" href="product-iphone-14pro.html"> 
+                <img src="iphone-14pro.jpeg" alt="iphone-14pro" loading="lazy">
+            </a> 
+            <h3>iphone-14pro</h3>
+            <p class="price"> $14000</p>
+            <button class="btn">Add to Cart </button>
+        </article> 
+
+         <article class="card" data-cat="phones" data-price="13000"> 
+            <a class="img-wrap" href="product-iphone-14p.html"> 
+                <img src="iphone-14.jpeg" alt="iphone-14p" loading="lazy">
+            </a> 
+            <h3>iphone-14</h3>
+            <p class="price"> $13000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+
+ <article class="card" data-cat="phones" data-price="27000"> 
+            <a class="img-wrap" href="product-MacBook pro.html"> 
+                <img src="MacBook Pro-inch,2023.jpeg" alt="MacBook" loading="lazy">
+            </a> 
+            <h3>MacBook pro-inch</h3>
+            <p class="price"> $27000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+
+         <article class="card" data-cat="phones" data-price="13000"> 
+            <a class="img-wrap" href="product-AirPods-pro.html"> 
+                <img src="AirPods-pro.jpeg" alt="AirPods-pro" loading="lazy">
+            </a> 
+            <h3>AirPods-pro</h3>
+            <p class="price"> $13000</p>
+            <button class="btn">Add to Cart </button>
+        </article>
+
+
+
+    </div>
+</section>
+
+    </div>
+  </main>
+
+
+
+<footer class="site-footer"> 
+    <div class="container"> 
+        @<span id="y"></span> Val Store
+    </div>
+</footer>
+<script src="app.js?v=3"></script>
+    
+</body>
+</html>
