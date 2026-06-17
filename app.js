@@ -208,12 +208,15 @@ function showCheckoutModal(orderMessage) {
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Complete Your Order</h2>
-                <button class="modal-close" aria-label="Close">&times;</button>
+                <div>
+                    <button class="modal-copy">Copy Order</button>
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                </div>
             </div>
             <div class="modal-body">
                 <div class="order-summary">
                     <h3>Order Summary</h3>
-                    <p style="white-space: pre-wrap; background: #f5f5f5; padding: 12px; border-radius: 8px; font-size: 13px; max-height: 200px; overflow-y: auto;">${escapeHtml(orderMessage)}</p>
+                    <p id="orderPreview" style="white-space: pre-wrap; background: #f5f5f5; padding: 12px; border-radius: 8px; font-size: 13px; max-height: 200px; overflow-y: auto;">${escapeHtml(orderMessage)}</p>
                 </div>
                 
                 <form id="checkoutForm" style="margin-top: 20px;">
@@ -264,6 +267,49 @@ function showCheckoutModal(orderMessage) {
         localStorage.setItem('val_last_order_details', JSON.stringify({ orderMessage, ...details }));
         modal.remove();
     });
+
+    // Copy button inside modal
+    const copyBtn = modal.querySelector('.modal-copy');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            copyTextToClipboard(orderMessage).then(() => {
+                showToast('Order copied to clipboard');
+            }).catch(() => {
+                alert('Copy failed. Please select and copy the text manually.');
+            });
+        });
+    }
+}
+
+// Copy helper & toast
+function copyTextToClipboard(text) {
+    if (!text) return Promise.reject('No text');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject) => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try {
+            document.execCommand('copy');
+            resolve(true);
+        } catch (e) { reject(e); }
+        ta.remove();
+    });
+}
+
+function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'toast-msg';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.classList.add('visible'), 10);
+    setTimeout(() => t.classList.remove('visible'), 2200);
+    setTimeout(() => t.remove(), 2600);
 }
 
 function escapeHtml(text) {
@@ -341,6 +387,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Checkout
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+
+    // Copy order text button (copies order summary to clipboard and opens chat)
+    const copyBtnMain = document.getElementById('copyOrderBtn');
+    if (copyBtnMain) {
+        copyBtnMain.addEventListener('click', async () => {
+            const msg = buildOrderMessage();
+            if (!msg) { alert('Your cart is empty.'); return; }
+            try {
+                await copyTextToClipboard(msg);
+                showToast('Order copied to clipboard');
+                // Open chat so user can paste the copied message
+                openChatWidget();
+                closeCart();
+            } catch (e) {
+                alert('Unable to copy automatically. Please select and copy the order text manually.');
+            }
+        });
+    }
 
     // Initial render
     updateCartUI();
