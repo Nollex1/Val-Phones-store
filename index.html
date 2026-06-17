@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Val Phone Accessories store</title> 
+    <title>Val Phone Accessories Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>  
-    <!--HEADER-->
-    <header class="site-header"> 
-        <div class="container topbar"> 
-            <div class="brand"> VAL Accessories</div>
-            <nav class="nav"> 
-                <a href="shop.html"> Shop</a>
-                <a href="#featured"> Featured</a>
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container topbar">
+            <div class="brand">VAL Accessories</div>
+            <nav class="nav">
+                <a href="shop.html">Shop</a>
+                <a href="#featured">Featured</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
+            <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </button>
         </div>
-    </header> 
-    <!--HERO SECTION--> 
-    <section class="hero"> 
-        <div class="container hero-inner"> 
-            <div class="hero-text"> 
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
                 <h2>Phone & Tech You Can Trust</h2>
-                <P>Fast delivery, clean prices, multipe payment options.</P>
+                <p>Fast delivery, clean prices, multiple payment options.</p>
                 <a href="shop.html" class="btn">Shop Now</a>
             </div>
-        <div class="hero-img">
-        <img src="banner.jpeg" alt="Hero Banner">  
-        
+            <div class="hero-img">
+                <img src="banner.jpeg" alt="Hero Banner">
+            </div>
         </div>
-        </div>
-    </section> 
+    </section>
 
-    <!--CATEGORIES-->
-    <section class="categories container" id="shop"> 
-        <h2>Shop by category</h2>
-        <div class="grid"> 
+    <!-- CATEGORIES -->
+    <section class="categories container" id="shop">
+        <h2>Shop by Category</h2>
+        <div class="grid">
             <div class="cat-card">Phones</div>
             <div class="cat-card">Accessories</div>
             <div class="cat-card">Audio</div>
@@ -45,90 +48,118 @@
         </div>
     </section>
 
-
-    <!--FEATURED PRODUCTS--> 
-    <section class="Featured container" id="Featured"> 
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured container" id="featured">
         <h2>Featured Products</h2>
-        <div class="grid"> 
-            <div class="product-card"> 
-                <img src="iphone-17pro.jpeg" alt="iphone-17pro">
-                <h3>iphone 17 Pro </h3>
-                <p class="price"></p>
+        <div class="grid">
+            <div class="product-card" data-id="iphone-17pro" data-name="iPhone 17 Pro" data-price="30000" data-img="iphone-17pro.jpeg">
+                <img src="iphone-17pro.jpeg" alt="iPhone 17 Pro">
+                <h3>iPhone 17 Pro</h3>
+                <p class="price">$30,000</p>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-
-            <div class="product-card"> 
+            <div class="product-card" data-id="airpods-pro" data-name="AirPods Pro" data-price="13000" data-img="AirPods-pro.jpeg">
                 <img src="AirPods-pro.jpeg" alt="AirPods Pro">
                 <h3>AirPods Pro</h3>
-                <p class="price"></p>
-            </div> 
-
-           <div class="product-card"> 
-                <img src="nice.jpeg" alt="AirPods Pro">
-                <h3>Apple sets </h3>
-                <p class="price"></p>
+                <p class="price">$13,000</p>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-
-            <div class="product-card"> 
-                <img src="okay.jpeg" alt="AirPods Pro">
+            <div class="product-card" data-id="apple-sets" data-name="Apple Sets" data-price="18000" data-img="nice.jpeg">
+                <img src="nice.jpeg" alt="Apple Sets">
+                <h3>Apple Sets</h3>
+                <p class="price">$18,000</p>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-id="apple-pro" data-name="Apple Pro" data-price="22000" data-img="okay.jpeg">
+                <img src="okay.jpeg" alt="Apple Pro">
                 <h3>Apple Pro</h3>
-                <p class="price"></p>
+                <p class="price">$22,000</p>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-
-            <div class="product-card"> 
-                <img src="good.jpeg" alt="AirPods Pro">
+            <div class="product-card" data-id="sets-pro" data-name="Sets Pro" data-price="25000" data-img="good.jpeg">
+                <img src="good.jpeg" alt="Sets Pro">
                 <h3>Sets Pro</h3>
-                <p class="price"></p>
+                <p class="price">$25,000</p>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-           
-
-        </div>
-    </section>  
-
-    <!--ABOUT--> 
-    <section class="section"> 
-        <div class="container about-contact"> 
-            <!--About-->
-            <div class="card about"> 
-                <h2>About Us</h2>
-                <P> 
-                    Val Store provide original phones and accessories at fair prices with fast delivery 
-                    and honest support. We focus on quality items, clear pricing, and simple service.
-                </P>
-                <ul class="bullets"> 
-                    <li>100% original product</li>
-                    <li>Multipe payment options</li>
-                    <li>Same-day or next-day delivery (city limits)</li>
-                    <li>7-day replacement on factory faultes</li>
-                </ul>
-            </div>
-        
-
-    <!--Contact--> 
-    <div class="card contact"> 
-        <h2>Contact Us </h2>
-        <form class="contact-form" action="#" method="post"> 
-            <div class="grid2"> 
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <input type="tel" name="phone" placeholder="phone  (optional)">
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send</button>
-        </form>
-        <div class="small print"> 
-            whatApp:<a href="https://wa.me/2340000000000" target="_blank">+234 00 0000 0000</a>. 
-            Instagram: <a href="#" target="_blank">@valstore</a>
-        </div>
-    </div>
         </div>
     </section>
 
-    <!--FOOTER--> 
-    <footer class="site-footer"> 
-        <div class="container"> 
-            <p>@ 2025 Val store</p>
+    <!-- ABOUT / CONTACT -->
+    <section class="section">
+        <div class="container about-contact">
+            <div class="card about">
+                <h2>About Us</h2>
+                <p>
+                    Val Store provides original phones and accessories at fair prices with fast delivery
+                    and honest support. We focus on quality items, clear pricing, and simple service.
+                </p>
+                <ul class="bullets">
+                    <li>100% original products</li>
+                    <li>Multiple payment options</li>
+                    <li>Same-day or next-day delivery (city limits)</li>
+                    <li>7-day replacement on factory faults</li>
+                </ul>
+            </div>
+
+            <div class="card contact" id="contact">
+                <h2>Contact Us</h2>
+                <form class="contact-form" action="#" method="post">
+                    <div class="grid2">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="tel" name="phone" placeholder="Phone (optional)">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+                <div class="small print">
+                    Live chat is available through the cart checkout button or the chat widget on the page.
+                    Instagram: <a href="#" target="_blank">@valstore</a>
+                </div>
+            </div>
         </div>
-    </footer> 
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Val Store</p>
+        </div>
+    </footer>
+
+    <!-- CART SLIDEOUT -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0</strong>
+            </div>
+            <button class="btn btn-checkout" id="checkoutBtn">Checkout via Chat</button>
+            <p class="cart-note">You'll be connected to live chat to complete your order, receive a secure payment link, and confirm delivery details (state, phone, address, email).</p>
+        </div>
+    </aside>
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a3216aeb6462d1d44111452/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
     <script src="app.js"></script>
 </body>
 </html>
